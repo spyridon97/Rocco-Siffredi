@@ -1,7 +1,6 @@
 // Implementation of the landing's page text slider
 const quote = document.getElementById("quote");
 const quoter = document.getElementById("quoter");
-console.log(quote, quoter);
 
 const quotes = [
     {

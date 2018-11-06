@@ -1,5 +1,5 @@
 :root {
-    --nav-height: 90px;
+    --nav-height: 100px;
     --color-acsent: #E84855;
     --color-ascent-dark: #942E37;
 }
@@ -20,6 +20,7 @@ p {
 /* Navigation */
 nav {
     align-items: center;
+    background-color: black;
     display: flex;
     height: var(--nav-height); width: 100%;
     position: absolute;
@@ -48,7 +49,7 @@ nav a {
     text-decoration: none;
 }
 
-#menu-item:hover {
+.menu-item:hover {
     animation: pole 10s linear infinite;
     background: repeating-linear-gradient(
         -45deg,
@@ -69,26 +70,17 @@ nav a {
     }
 }
 
-#menu-item::after {
-    bottom: 0;
-    content: "";
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: -2;
-}
-
 .menu-image {
     background-size: contain;
     background-repeat: no-repeat;
     bottom: 0;
+    opacity: 0;
     left: 0;
     opacity: 0.9;
     position: absolute;
     right: 0;
     top: 0;
-    z-index: -1;  
+    z-index: -1;
 }
 
 #menu-image1 {
@@ -150,6 +142,9 @@ nav a {
     80% {
         opacity: 1;
     }
+    95% {
+        opacity: 0;
+    }
     100% {
         transform: translateX(10%);
         opacity: 0;
@@ -171,8 +166,78 @@ nav a {
     80% {
         opacity: 1;
     }
+    95% {
+        opacity: 0;
+    }
     100% {
         transform: translateX(-20%);
         opacity: 0;
     }
+}
+
+
+/* Biography page */
+.biography {
+    background-color: white;
+    height: auto; width: 100%;
+    margin-top: var(--nav-height);
+    padding: 20px;
+}
+
+.overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 10px;
+}
+
+.overview p {
+    color: black;
+}
+
+.overview .emphasize {
+    font-size: 1.6em;
+    grid-column-start: 1;
+}
+
+.map-container {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    position: relative;
+}
+
+.map {
+    height: auto; width: 400px;
+}
+
+#pointer {
+    animation: rotate 5s linear infinite;
+    height: 40px; width: auto;
+    left: 230px;
+    position: absolute;
+    top: 190px;
+    transform-origin: 50% 100%;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(20deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+#text2 {
+    align-self: center;
+    font-size: 2rem;
+    text-align: center;
 }

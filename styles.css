@@ -181,13 +181,14 @@ nav a {
     background-color: white;
     height: auto; width: 100%;
     margin-top: var(--nav-height);
-    padding: 20px;
 }
 
 .overview {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px 10px;
+    height: calc(100vh - var(--nav-height));
+    padding: 20px;
 }
 
 .overview p {
@@ -240,4 +241,76 @@ nav a {
     align-self: center;
     font-size: 2rem;
     text-align: center;
+}
+
+.stats {
+    align-items: center;
+    background: repeating-linear-gradient(
+        90deg,
+        white,
+        white 40px,
+        black 40px,
+        black 80px
+    );
+    display: flex;
+    height: 100vh;
+    justify-content: flex-end;
+}
+
+#stats-box {
+    background-color: white;
+    border: 6px black solid;
+    height: 70%; width: 80%;
+    justify-self: flex-start;
+    margin: 0 2%;
+    opacity: 0.95;
+}
+
+#stats-box > ul {
+    align-items: stretch;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    height: 90%;
+    list-style-type: none;
+    padding: 10px 20px;
+}
+
+.stats-item {
+    border: 2px dashed gray;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.stats-item > p:nth-child(2) {
+    font-family: 'Sigmar One', cursive;
+    font-size: 2rem;
+    justify-self: center;
+}
+
+.italian-background{
+    background: linear-gradient(
+        90deg,
+        #1B5E20,
+        #1B5E20 33.3%,
+        white 33.3%,
+        white 66.6%,
+        #b71c1c 66.6%,
+        #b71c1c 100%
+    );
+    border: none;
+}
+
+.blond-color:hover {
+    color: #D08B6A;
+    transition: .5s;
+}
+
+#siffredi-costume {
+    height: 100%; width: auto;
+    margin-right: 50px;
 }

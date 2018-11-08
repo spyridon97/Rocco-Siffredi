@@ -84,15 +84,15 @@ nav a {
 }
 
 #menu-image1 {
-    background-image: url("/images/itm-rocco.png");
+    background-image: url("./images/itm-rocco.png");
 }
 
 #menu-image2 {
-    background-image: url("/images/itm-girl1.png");
+    background-image: url("./images/itm-girl1.png");
 }
 
 #menu-image3 {
-    background-image: url("/images/itm-girl2.png");
+    background-image: url("./images/itm-girl2.png");
 }
 
 /* Landing page (index.html) */
@@ -201,21 +201,23 @@ nav a {
 }
 
 .map-container {
+    background-image: url("./images/it.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
     grid-column-start: 2;
     grid-row-start: 2;
+    height: 60vh; width: auto;
     position: relative;
-}
-
-.map {
-    height: auto; width: 400px;
 }
 
 #pointer {
     animation: rotate 5s linear infinite;
     height: 40px; width: auto;
-    left: 230px;
+    left: 52.5%;
     position: absolute;
-    top: 190px;
+    top: 33.5%;
     transform-origin: 50% 100%;
 }
 
@@ -264,6 +266,7 @@ nav a {
     justify-self: flex-start;
     margin: 0 2%;
     opacity: 0.95;
+    overflow: hidden;
 }
 
 #stats-box > ul {
@@ -274,6 +277,7 @@ nav a {
     gap: 20px;
     height: 90%;
     list-style-type: none;
+    margin: auto;
     padding: 10px 20px;
 }
 
@@ -288,7 +292,7 @@ nav a {
 
 .stats-item > p:nth-child(2) {
     font-family: 'Sigmar One', cursive;
-    font-size: 2rem;
+    font-size: 1.5rem;
     justify-self: center;
 }
 

@@ -10,10 +10,10 @@
 <body>
     <nav>
         <ul>       
-            <li id="logo"><a href="/"><h1>Rocco Siffredi</h1></a></li>
+            <li id="logo"><a href="../index.html"><h1>Rocco Siffredi</h1></a></li>
             <li class="menu-item">
                 <span class="menu-image" id="menu-image1"></span>
-                <a href="./pages/biography.html">Biography</a></li>
+                <a href="#">Biography</a></li>
             <li class="menu-item">
                 <span class="menu-image" id="menu-image2"></span>
                 <a href="#">Awards</a>
@@ -32,7 +32,9 @@
             <div class="map-container">
                 <img id="pointer" src="../images/pointer.png" alt="Pointer"/>
             </div>
-            <p class="emphasize" id="text2">I was born in Otorna, Italy on 4 May 1964.</p>
+            <p class="emphasize" id="text2">I was born in <span class="bold">Otorna</span>, Italy on 4 May 1964.</p>
+            <div id="dynamic-background"></div>
+            <!-- <img src="../images/icons/0.png" class="background-icon"> -->
         </section>
         <section class="stats">
             <div id="stats-box">
@@ -48,5 +50,6 @@
             <img id="siffredi-costume" src="../images/rocco-costume.png" alt="Rocco Siffredi">
         </section>
     </div>
+    <script src="../scripts/biography.js"></script>
 </body>
 </html>

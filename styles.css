@@ -181,6 +181,7 @@ nav a {
     background-color: white;
     height: auto; width: 100%;
     margin-top: var(--nav-height);
+    position: relative;
 }
 
 .overview {
@@ -189,15 +190,21 @@ nav a {
     gap: 10px 10px;
     height: calc(100vh - var(--nav-height));
     padding: 20px;
+    position: relative;
 }
 
 .overview p {
     color: black;
+    z-index: 1;
 }
 
 .overview .emphasize {
     font-size: 1.6em;
     grid-column-start: 1;
+}
+
+.emphasize .bold {
+    font-weight: bold;
 }
 
 .map-container {
@@ -210,6 +217,7 @@ nav a {
     grid-row-start: 2;
     height: 60vh; width: auto;
     position: relative;
+    z-index: 1;
 }
 
 #pointer {
@@ -243,6 +251,27 @@ nav a {
     align-self: center;
     font-size: 2rem;
     text-align: center;
+}
+
+#dynamic-background {
+    position: absolute;
+    height: 100%; width: 100%;
+}
+
+.background-icon {
+    animation: fade-in .4s linear;
+    opacity: .8; 
+    position: absolute;
+    z-index: 0;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .8;
+    }
 }
 
 .stats {

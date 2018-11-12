@@ -1,5 +1,5 @@
 /*
-    Creates a dynamic background by populating randomly the dynamic-background element
+    Creates a dynamic background by populating randomly the #dynamic-background element
 */
 const background = document.getElementById("dynamic-background");
 

@@ -49,6 +49,28 @@ nav a {
     text-decoration: none;
 }
 
+nav .selected {
+    position: relative;
+}
+
+.selected::before {
+    background-image: linear-gradient(
+        -45deg,
+        #942E37,
+        #942E37 20px,
+        #E84855 20px,
+        #E84855 40px
+    );;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 93%;
+    z-index: 0;
+}
+
 .menu-item:hover {
     animation: pole 10s linear infinite;
     background: repeating-linear-gradient(

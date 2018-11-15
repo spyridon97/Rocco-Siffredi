@@ -8,11 +8,11 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sigmar+One" rel="stylesheet">
 </head>
 <body>
-
-    <nav>
+    <header>
+        <a href="../index.html" id="logo"><h1>Rocco Siffredi</h1></a>
+        <nav>
             <ul>       
-                <li id="logo"><a href="../index.html"><h1>Rocco Siffredi</h1></a></li>
-                <li class="menu-item selected" onclick="window.location='./pages/biography.html';">
+                <li class="menu-item">
                     <a href="#">
                         <span class="menu-image" id="menu-image1"></span>
                         <a href="#">Biography</a>
@@ -33,7 +33,8 @@
                 <li class="menu-item"><a href="#">Quiz</a></li>
             </ul>
         </nav>
-
+    </header>
+    
     <div class="biography">
         <section class="overview">
             <p class="emphasize">I am a <strong>director</strong> and producer of pornographic movies. I also like to perform in them.</p>
@@ -42,7 +43,6 @@
             </div>
             <p class="emphasize" id="text2">I was born in <span class="bold">Otorna</span>, Italy on 4 May 1964.</p>
             <div id="dynamic-background"></div>
-            <!-- <img src="../images/icons/0.png" class="background-icon"> -->
         </section>
         <section class="stats">
             <div id="stats-box">
@@ -58,6 +58,25 @@
             <img id="siffredi-costume" src="../images/rocco-costume.png" alt="Rocco Siffredi">
         </section>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>All rights reserved 2018©.</p>
+        </div>
+        <div class="footer-content">
+            <p>Navigation</p>
+            <a href="#">Biography</a>
+            <a href="#">Awards</a>
+            <a href="#">Multimedia</a>
+            <a href="#">Quiz</a>
+        </div>
+        <div class="footer-content">
+            <p>Legal</p>
+            <a href="#">Credits</a>
+            <a href="#">Site ownership</a>
+            <a href="#">No user personalisation is performed</a>
+        </div>
+    </footer>
     <script src="../scripts/biography.js"></script>
 </body>
 </html>

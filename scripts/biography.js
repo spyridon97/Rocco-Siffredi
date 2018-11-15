@@ -6,7 +6,7 @@ const background = document.getElementById("dynamic-background");
 const leftPadding = background.offsetWidth / 10;
 const topPadding = background.offsetHeight / 7; 
 
-const maxElements = 100;
+const maxElements = 10;
 let elements = 0;
 
 const interval = setInterval(() => {

@@ -151,6 +151,9 @@ nav .selected {
 }
 
 /* Landing page (index.html) */
+#landing-main {
+    height: 100%; width: 100%;
+}
 
 #landing-image {
     animation: smooth-in 7s linear;

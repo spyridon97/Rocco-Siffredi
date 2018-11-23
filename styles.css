@@ -76,6 +76,12 @@ nav {
     justify-content: space-evenly;
 }
 
+@media screen and (max-width: 600px){
+    nav {
+        flex-direction: column;
+    }
+} 
+
 nav > ul {
     font-variant: small-caps;
     list-style: none;
@@ -92,8 +98,11 @@ nav li:hover {
     transition: .5s;
 }
 
-nav a {
+nav a, nav p {
     color: white;
+    display: inline;
+    font-family: 'Sigmar One', cursive;
+    margin: 0;
     text-decoration: none;
 }
 

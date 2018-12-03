@@ -462,6 +462,60 @@ nav .selected {
 
 
 /* awards page */
+.awards {
+    background-color: white;
+    height: auto; width: 100%;
+    position: relative;
+}
+
+.intro {
+    height: auto;
+    padding: 20px;
+    position: relative;
+}
+
+.intro p {
+    color: black;
+    z-index: 1;
+}
+
+.intro .text {
+    font-size: 1.6em;
+}
+
+.title {
+    font-size: 2em;
+    align-self: center;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.avn {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px 10px;
+    height: calc(80vh - var(--nav-height));
+    padding: 20px;
+    position: relative;
+}
+
+.avn p {
+
+}
+
+.avn-container {
+    background-image: url("./images/avn-award.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    grid-column-start: 2;
+    height: 60vh; width: auto;
+    position: relative;
+    z-index: 1;
+}
 
 
 /* multimedia page */

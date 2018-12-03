@@ -76,9 +76,32 @@ nav {
     justify-content: space-evenly;
 }
 
-@media screen and (max-width: 600px){
+#resp-expand {
+    background-image: url("./images/icons/expand.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: solid 2px white;
+    border-radius: 10%;
+    cursor: pointer;
+    display: none;
+    height: 3rem; width: 3rem;
+    position: absolute;
+    right: 20px;
+}
+
+@media screen and (max-width: 800px){
     nav {
-        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+    }
+
+    nav li:not(:first-child){
+        display: none;        
+    }
+
+    #resp-expand {
+        display: block;
     }
 } 
 
@@ -93,9 +116,11 @@ nav li {
     padding: 20px;
 }
 
-nav li:hover {
-    transform: scale(1.2);
-    transition: .5s;
+@media screen and (min-width: 800px){
+    nav li:hover {
+        transform: scale(1.2);
+        transition: .5s;
+    }
 }
 
 nav a, nav p {
@@ -117,7 +142,7 @@ nav .selected {
         #942E37 20px,
         #E84855 20px,
         #E84855 40px
-    );;
+    );
     bottom: 0;
     content: "";
     display: block;
@@ -128,20 +153,22 @@ nav .selected {
     z-index: 0;
 }
 
-.menu-item:hover {
-    animation: pole 10s linear infinite;
-    background: repeating-linear-gradient(
-        45deg,
-        #942E37,
-        #942E37 10px,
-        #E84855 10px,
-        #E84855 20px
-    );
-    background-size: 400% 400%;
-    background-position-x: 100%;
-    border: 4px solid white;
-    border-radius: 10px;
-    box-sizing: border-box;
+@media screen and (min-width: 800px) {
+    .menu-item:hover {
+        animation: pole 10s linear infinite;
+        background: repeating-linear-gradient(
+            45deg,
+            #942E37,
+            #942E37 10px,
+            #E84855 10px,
+            #E84855 20px
+        );
+        background-size: 400% 400%;
+        background-position-x: 100%;
+        border: 4px solid white;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }    
 }
 
 @keyframes pole {

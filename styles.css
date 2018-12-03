@@ -202,6 +202,10 @@ nav .selected {
     background-image: url("./images/itm-girl2.png");
 }
 
+#menu-image4 {
+    background-image: url("./images/itm-girl3.png");
+}
+
 /* Landing page (index.html) */
 #landing-main {
     height: 100%; width: 100%;

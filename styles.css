@@ -22,7 +22,6 @@ header {
     display: flex;
     flex-direction: row;
     height: var(--nav-height);
-    overflow: hidden;
 }
 
 #logo {
@@ -76,34 +75,19 @@ nav {
     justify-content: space-evenly;
 }
 
+/* The expand button */
 #resp-expand {
     background-image: url("./images/icons/expand.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    border: solid 2px white;
-    border-radius: 10%;
     cursor: pointer;
     display: none;
-    height: 3rem; width: 3rem;
+    height: 10%; width: 10%;
     position: absolute;
     right: 20px;
 }
 
-@media screen and (max-width: 800px){
-    nav {
-        justify-content: center;
-        width: 50%;
-    }
-
-    nav li:not(:first-child){
-        display: none;        
-    }
-
-    #resp-expand {
-        display: block;
-    }
-} 
 
 nav > ul {
     font-variant: small-caps;
@@ -175,6 +159,41 @@ nav .selected {
     100% {
         background-position: 0% 100%;
     }
+}
+
+@media screen and (max-width: 800px){
+    nav {
+        background-color: transparent;
+        height: auto; width: auto;
+        justify-content: center;
+    }
+
+    nav li:not(:first-child){
+        display: none;        
+    }
+
+    #resp-expand {
+        display: block;
+    }
+} 
+
+@media screen and (max-width: 470px) {
+    header {
+        flex-direction: column;
+    }
+}
+
+/* The responsive classes are meant to be added using js*/
+
+header.responsive {
+    background-color: var(--color-ascent-dark);
+    flex-direction: column;
+    height: auto;
+    justify-content: space-between;
+}
+
+nav li.responsive {
+    display: block;
 }
 
 .menu-image {

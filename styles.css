@@ -521,10 +521,24 @@ nav li.responsive {
 }
 
 .avn p {
-
+    color: black;
+    z-index: 1;
 }
 
-.avn-container {
+.avn .bold {
+    font-weight: bold;
+}
+
+.avn .avn-awards{
+    font-size: 1.6em;
+    grid-column-start: 1;
+    height: 10vh; width: auto;
+    position: relative;
+    align-self: center;
+    text-align: center;
+}
+
+.avn .avn-trophy {
     background-image: url("./images/avn-award.png");
     background-position: center;
     background-size: contain;
@@ -534,6 +548,63 @@ nav li.responsive {
     height: 60vh; width: auto;
     position: relative;
     z-index: 1;
+}
+
+.avn .avn-nominations{
+    font-size: 1.6em;
+    grid-column-start: 3;
+    height: 10vh; width: auto;
+    position: relative;
+    align-self: center;
+    text-align: center;
+}
+
+.xcor {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px 10px;
+    height: calc(80vh - var(--nav-height));
+    padding: 20px;
+    position: relative;
+}
+
+.xcor p {
+    color: black;
+    z-index: 1;
+}
+
+.xcor .bold {
+    font-weight: bold;
+}
+
+.xcor .xcor-awards{
+    font-size: 1.6em;
+    grid-column-start: 1;
+    height: 10vh; width: auto;
+    position: relative;
+    align-self: center;
+    text-align: center;
+}
+
+.xcor-trophy {
+    background-image: url("images/xrco-award.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    grid-column-start: 2;
+    height: 60vh; width: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.xcor .xcor-nominations{
+    font-size: 1.6em;
+    grid-column-start: 3;
+    height: 10vh; width: auto;
+    position: relative;
+    align-self: center;
+    text-align: center;
 }
 
 

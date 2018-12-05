@@ -515,6 +515,30 @@ nav li.responsive {
     font-size: 1.6em;
 }
 
+
+a {
+    padding-left: 20px;
+}
+
+a:link {
+    color: deeppink;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: darkred;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: blue;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+
 .line {
     width: 350px;
 }
@@ -649,27 +673,6 @@ nav li.responsive {
     position: relative;
     align-self: center;
     text-align: center;
-}
-.a {
-    padding-left: 20px;
-}
-
-a:link {
-    color: deeppink;
-    background-color: transparent;
-    text-decoration: none;
-}
-
-a:visited {
-    color: darkred;
-    background-color: transparent;
-    text-decoration: none;
-}
-
-a:hover {
-    color: blue;
-    background-color: transparent;
-    text-decoration: underline;
 }
 
 /* multimedia page */

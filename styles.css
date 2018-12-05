@@ -491,6 +491,7 @@ nav li.responsive {
     height: auto;
     padding: 20px;
     position: relative;
+    align-self: center;
 }
 
 .intro p {
@@ -502,16 +503,25 @@ nav li.responsive {
     font-size: 1.6em;
 }
 
-.title {
+.line {
+    width: 350px;
+}
+
+.avn-title {
     font-size: 2em;
     align-self: center;
     text-align: center;
-    color: black;
+    color: #E84855;
     font-weight: bold;
     z-index: 1;
+    margin: 0;
 }
 
 .avn {
+    background-image: url("./images/AVN.jpg");
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px 10px;
@@ -559,7 +569,23 @@ nav li.responsive {
     text-align: center;
 }
 
+.xcor-title {
+    font-size: 2em;
+    align-self: center;
+    text-align: center;
+    color: #E84855;
+    font-weight: bold;
+    z-index: 1;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
 .xcor {
+    background-image: url("images/XCOR.jpg");
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px 10px;
@@ -606,7 +632,6 @@ nav li.responsive {
     align-self: center;
     text-align: center;
 }
-
 
 /* multimedia page */
 

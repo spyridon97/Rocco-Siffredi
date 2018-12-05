@@ -678,3 +678,13 @@ nav li.responsive {
 /* multimedia page */
 
 /* quiz page */
+.fill {
+    overflow: hidden;
+    background-size: auto;
+    background-position: center;
+    background-image: url(images/MultimediaBackground.png);
+}
+
+input {
+
+}

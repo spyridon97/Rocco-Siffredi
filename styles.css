@@ -516,23 +516,23 @@ nav li.responsive {
 }
 
 
-a {
-    padding-left: 20px;
+.imdb {
+    padding-left: 10px;
 }
 
-a:link {
+.imdb:link {
     color: deeppink;
     background-color: transparent;
     text-decoration: none;
 }
 
-a:visited {
+.imdb:visited {
     color: darkred;
     background-color: transparent;
     text-decoration: none;
 }
 
-a:hover {
+.imdb:hover {
     color: blue;
     background-color: transparent;
     text-decoration: underline;

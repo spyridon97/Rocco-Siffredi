@@ -42,19 +42,20 @@ footer {
 
 footer::after {
     background-image: repeating-linear-gradient(
-        45deg,
-        #942E37,
-        #942E37 20px,
-        #E84855 20px,
-        #E84855 40px
+            45deg,
+            #942E37,
+            #942E37 20px,
+            #E84855 20px,
+            #E84855 40px
     );
     content: "";
-    height: 2%; width: 100%;
+    height: 2%;
+    width: 100%;
     position: absolute;
-    top:0;
+    top: 0;
 }
 
-footer p{
+footer p {
     font-weight: bold;
 }
 
@@ -83,7 +84,8 @@ nav {
     background-size: contain;
     cursor: pointer;
     display: none;
-    height: 10%; width: 10%;
+    height: 10%;
+    width: 10%;
     position: absolute;
     right: 20px;
 }
@@ -100,7 +102,7 @@ nav li {
     padding: 20px;
 }
 
-@media screen and (min-width: 800px){
+@media screen and (min-width: 800px) {
     nav li:hover {
         transform: scale(1.2);
         transition: .5s;
@@ -121,11 +123,11 @@ nav .selected {
 
 .selected::before {
     background-image: linear-gradient(
-        -45deg,
-        #942E37,
-        #942E37 20px,
-        #E84855 20px,
-        #E84855 40px
+            -45deg,
+            #942E37,
+            #942E37 20px,
+            #E84855 20px,
+            #E84855 40px
     );
     bottom: 0;
     content: "";
@@ -141,18 +143,18 @@ nav .selected {
     .menu-item:hover {
         animation: pole 10s linear infinite;
         background: repeating-linear-gradient(
-            45deg,
-            #942E37,
-            #942E37 10px,
-            #E84855 10px,
-            #E84855 20px
+                45deg,
+                #942E37,
+                #942E37 10px,
+                #E84855 10px,
+                #E84855 20px
         );
         background-size: 400% 400%;
         background-position-x: 100%;
         border: 4px solid white;
         border-radius: 10px;
         box-sizing: border-box;
-    }    
+    }
 }
 
 @keyframes pole {
@@ -161,21 +163,22 @@ nav .selected {
     }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
     nav {
         background-color: transparent;
-        height: auto; width: auto;
+        height: auto;
+        width: auto;
         justify-content: center;
     }
 
-    nav li:not(:first-child){
-        display: none;        
+    nav li:not(:first-child) {
+        display: none;
     }
 
     #resp-expand {
         display: block;
     }
-} 
+}
 
 @media screen and (max-width: 470px) {
     header {
@@ -227,13 +230,15 @@ nav li.responsive {
 
 /* Landing page (index.html) */
 #landing-main {
-    height: 100%; width: 100%;
+    height: 100%;
+    width: 100%;
 }
 
 #landing-image {
     animation: smooth-in 7s linear;
     bottom: 0;
-    height: 80%; width: auto;
+    height: 80%;
+    width: auto;
     position: absolute;
     right: 10%;
 }
@@ -311,7 +316,8 @@ nav li.responsive {
 /* Biography page */
 .biography {
     background-color: white;
-    height: auto; width: 100%;
+    height: auto;
+    width: 100%;
     position: relative;
 }
 
@@ -346,14 +352,16 @@ nav li.responsive {
     display: block;
     grid-column-start: 2;
     grid-row-start: 2;
-    height: 60vh; width: auto;
+    height: 60vh;
+    width: auto;
     position: relative;
     z-index: 1;
 }
 
 #pointer {
     animation: rotate 5s linear infinite;
-    height: 40px; width: auto;
+    height: 40px;
+    width: auto;
     left: 52.5%;
     position: absolute;
     top: 33.5%;
@@ -386,12 +394,13 @@ nav li.responsive {
 
 #dynamic-background {
     position: absolute;
-    height: 100%; width: 100%;
+    height: 100%;
+    width: 100%;
 }
 
 .background-icon {
     animation: fade-in .4s linear;
-    opacity: .8; 
+    opacity: .8;
     position: absolute;
     z-index: 0;
 }
@@ -408,11 +417,11 @@ nav li.responsive {
 .stats {
     align-items: center;
     background: repeating-linear-gradient(
-        90deg,
-        white,
-        white 40px,
-        black 40px,
-        black 80px
+            90deg,
+            white,
+            white 40px,
+            black 40px,
+            black 80px
     );
     display: flex;
     height: 100vh;
@@ -422,7 +431,8 @@ nav li.responsive {
 #stats-box {
     background-color: white;
     border: 6px black solid;
-    height: 70%; width: 80%;
+    height: 70%;
+    width: 80%;
     justify-self: flex-start;
     margin: 0 2%;
     opacity: 0.95;
@@ -456,15 +466,15 @@ nav li.responsive {
     justify-self: center;
 }
 
-.italian-background{
+.italian-background {
     background: linear-gradient(
-        90deg,
-        #1B5E20,
-        #1B5E20 33.3%,
-        white 33.3%,
-        white 66.6%,
-        #b71c1c 66.6%,
-        #b71c1c 100%
+            90deg,
+            #1B5E20,
+            #1B5E20 33.3%,
+            white 33.3%,
+            white 66.6%,
+            #b71c1c 66.6%,
+            #b71c1c 100%
     );
     border: none;
 }
@@ -475,7 +485,8 @@ nav li.responsive {
 }
 
 #siffredi-costume {
-    height: 100%; width: auto;
+    height: 100%;
+    width: auto;
     margin-right: 50px;
 }
 
@@ -483,7 +494,8 @@ nav li.responsive {
 /* awards page */
 .awards {
     background-color: white;
-    height: auto; width: 100%;
+    height: auto;
+    width: 100%;
     position: relative;
 }
 
@@ -539,10 +551,11 @@ nav li.responsive {
     font-weight: bold;
 }
 
-.avn .avn-awards{
+.avn .avn-awards {
     font-size: 1.6em;
     grid-column-start: 1;
-    height: 10vh; width: auto;
+    height: 10vh;
+    width: auto;
     position: relative;
     align-self: center;
     text-align: center;
@@ -555,15 +568,17 @@ nav li.responsive {
     background-repeat: no-repeat;
     display: block;
     grid-column-start: 2;
-    height: 60vh; width: auto;
+    height: 60vh;
+    width: auto;
     position: relative;
     z-index: 1;
 }
 
-.avn .avn-nominations{
+.avn .avn-nominations {
     font-size: 1.6em;
     grid-column-start: 3;
-    height: 10vh; width: auto;
+    height: 10vh;
+    width: auto;
     position: relative;
     align-self: center;
     text-align: center;
@@ -603,10 +618,11 @@ nav li.responsive {
     font-weight: bold;
 }
 
-.xcor .xcor-awards{
+.xcor .xcor-awards {
     font-size: 1.6em;
     grid-column-start: 1;
-    height: 10vh; width: auto;
+    height: 10vh;
+    width: auto;
     position: relative;
     align-self: center;
     text-align: center;
@@ -619,18 +635,41 @@ nav li.responsive {
     background-repeat: no-repeat;
     display: block;
     grid-column-start: 2;
-    height: 60vh; width: auto;
+    height: 60vh;
+    width: auto;
     position: relative;
     z-index: 1;
 }
 
-.xcor .xcor-nominations{
+.xcor .xcor-nominations {
     font-size: 1.6em;
     grid-column-start: 3;
-    height: 10vh; width: auto;
+    height: 10vh;
+    width: auto;
     position: relative;
     align-self: center;
     text-align: center;
+}
+.a {
+    padding-left: 20px;
+}
+
+a:link {
+    color: deeppink;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: darkred;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: blue;
+    background-color: transparent;
+    text-decoration: underline;
 }
 
 /* multimedia page */

@@ -1,104 +1,167 @@
 (function () {
-    function buildQuiz() {
-        // we'll need a place to store the HTML output
-        const output = [];
+    let questions = [{
+        question: "What is 2*5?",
+        choices: [2, 5, 10, 15, 20],
+        correctAnswer: 2
+    }, {
+        question: "What is 3*6?",
+        choices: [3, 6, 9, 12, 18],
+        correctAnswer: 4
+    }, {
+        question: "What is 8*9?",
+        choices: [72, 99, 108, 134, 156],
+        correctAnswer: 0
+    }, {
+        question: "What is 1*7?",
+        choices: [4, 5, 6, 7, 8],
+        correctAnswer: 3
+    }, {
+        question: "What is 8*8?",
+        choices: [20, 30, 40, 50, 64],
+        correctAnswer: 4
+    }];
 
-        // for each question...
-        myQuestions.forEach((currentQuestion, questionNumber) => {
-            // we'll want to store the list of answer choices
-            const answers = [];
+    let questionCounter = 0; //Tracks question number
+    let selections = []; //Array containing user choices
+    let quiz = $('#quiz'); //Quiz div object
 
-            // and for each available answer...
-            for (letter in currentQuestion.answers) {
-                // ...add an HTML radio button
-                answers.push(
-                    `<label>
-            <input type="radio" name="question${questionNumber}" value="${letter}">
-            ${letter} :
-            ${currentQuestion.answers[letter]}
-          </label>`
-                );
-            }
+    // Display initial question
+    displayNext();
 
-            // add this question and its answers to the output
-            output.push(
-                `<div class="question"> ${currentQuestion.question} </div>
-        <div class="answers"> ${answers.join("")} </div>`
-            );
-        });
+    // Click handler for the 'next' button
+    $('#next').on('click', function (e) {
+        e.preventDefault();
 
-        // finally combine our output list into one string of HTML and put it on the page
-        quizContainer.innerHTML = output.join("");
-    }
-
-    function showResults() {
-        // gather answer containers from our quiz
-        const answerContainers = quizContainer.querySelectorAll(".answers");
-
-        // keep track of user's answers
-        let numCorrect = 0;
-
-        // for each question...
-        myQuestions.forEach((currentQuestion, questionNumber) => {
-            // find selected answer
-            const answerContainer = answerContainers[questionNumber];
-            const selector = `input[name=question${questionNumber}]:checked`;
-            const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-            // if answer is correct
-            if (userAnswer === currentQuestion.correctAnswer) {
-                // add to the number of correct answers
-                numCorrect++;
-
-                // color the answers green
-                answerContainers[questionNumber].style.color = "lightgreen";
-            } else {
-                // if answer is wrong or blank
-                // color the answers red
-                answerContainers[questionNumber].style.color = "red";
-            }
-        });
-
-        // show number of correct answers out of total
-        resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-    }
-
-    const quizContainer = document.getElementById("quiz");
-    const resultsContainer = document.getElementById("results");
-    const submitButton = document.getElementById("submit");
-    const myQuestions = [
-        {
-            question: "Who is the strongest?",
-            answers: {
-                a: "Superman",
-                b: "The Terminator",
-                c: "Waluigi, obviously"
-            },
-            correctAnswer: "c"
-        },
-        {
-            question: "What is the best site ever created?",
-            answers: {
-                a: "SitePoint",
-                b: "Simple Steps Code",
-                c: "Trick question; they're both the best"
-            },
-            correctAnswer: "c"
-        },
-        {
-            question: "Where is Waldo really?",
-            answers: {
-                a: "Antarctica",
-                b: "Exploring the Pacific Ocean",
-                c: "Sitting in a tree",
-                d: "Minding his own business, so stop asking"
-            },
-            correctAnswer: "d"
+        // Suspend click listener during fade animation
+        if (quiz.is(':animated')) {
+            return false;
         }
-    ];
+        choose();
 
-    // display quiz right away
-    buildQuiz();
-    // on submit, show results
-    submitButton.addEventListener("click", showResults);
+        // If no user selection, progress is stopped
+        if (isNaN(selections[questionCounter])) {
+            alert('Please make a selection!');
+        } else {
+            questionCounter++;
+            displayNext();
+        }
+    });
+
+    // Click handler for the 'prev' button
+    $('#prev').on('click', function (e) {
+        e.preventDefault();
+
+        if (quiz.is(':animated')) {
+            return false;
+        }
+        choose();
+        questionCounter--;
+        displayNext();
+    });
+
+    // Click handler for the 'Start Over' button
+    $('#start').on('click', function (e) {
+        e.preventDefault();
+
+        if (quiz.is(':animated')) {
+            return false;
+        }
+        questionCounter = 0;
+        selections = [];
+        displayNext();
+        $('#start').hide();
+    });
+
+    // Animates buttons on hover
+    $('.button').on('mouseenter', function () {
+        $(this).addClass('active');
+    });
+    $('.button').on('mouseleave', function () {
+        $(this).removeClass('active');
+    });
+
+    // Creates and returns the div that contains the questions and 
+    // the answer selections
+    function createQuestionElement(index) {
+        let qElement = $('<div>', {
+            id: 'question'
+        });
+
+        let header = $('<h2>Question ' + (index + 1) + ':</h2>');
+        qElement.append(header);
+
+        let question = $('<p>').append(questions[index].question);
+        qElement.append(question);
+
+        let radioButtons = createRadios(index);
+        qElement.append(radioButtons);
+
+        return qElement;
+    }
+
+    // Creates a list of the answer choices as radio inputs
+    function createRadios(index) {
+        let radioList = $('<ul>');
+        let item;
+        let input = '';
+        for (let i = 0; i < questions[index].choices.length; i++) {
+            item = $('<li>');
+            input = '<input type="radio" name="answer" value=' + i + ' />';
+            input += questions[index].choices[i];
+            item.append(input);
+            radioList.append(item);
+        }
+        return radioList;
+    }
+
+    // Reads the user selection and pushes the value to an array
+    function choose() {
+        selections[questionCounter] = +$('input[name="answer"]:checked').val();
+    }
+
+    // Displays next requested element
+    function displayNext() {
+        quiz.fadeOut(function () {
+            $('#question').remove();
+
+            if (questionCounter < questions.length) {
+                let nextQuestion = createQuestionElement(questionCounter);
+                quiz.append(nextQuestion).fadeIn();
+                if (!(isNaN(selections[questionCounter]))) {
+                    $('input[value=' + selections[questionCounter] + ']').prop('checked', true);
+                }
+
+                // Controls display of 'prev' button
+                if (questionCounter === 1) {
+                    $('#prev').show();
+                } else if (questionCounter === 0) {
+
+                    $('#prev').hide();
+                    $('#next').show();
+                }
+            } else {
+                let scoreElem = displayScore();
+                quiz.append(scoreElem).fadeIn();
+                $('#next').hide();
+                $('#prev').hide();
+                $('#start').show();
+            }
+        });
+    }
+
+    // Computes score and returns a paragraph element to be displayed
+    function displayScore() {
+        let score = $('<p>', {id: 'question'});
+
+        let numCorrect = 0;
+        for (let i = 0; i < selections.length; i++) {
+            if (selections[i] === questions[i].correctAnswer) {
+                numCorrect++;
+            }
+        }
+
+        score.append('You got ' + numCorrect + ' questions out of ' +
+            questions.length + ' right!!!');
+        return score;
+    }
 })();

@@ -690,6 +690,40 @@ nav li.responsive {
     margin-right: auto;
 }
 
+#plaisio {
+    height: 610px;
+}
+
+#image1 {
+    width: 100px;
+    height: 100px;
+}
+
+#image2 {
+    width: 80px;
+    height: 100px;
+}
+
+#image3 {
+    width: 150px;
+    height: 100px;
+}
+
+#image4 {
+    width: 80px;
+    height: 100px;
+}
+
+#image5 {
+    width: 80px;
+    height: 100px;
+}
+
+#image6 {
+    width: 178px;
+    height: 100px;
+}
+
 
 /* quiz page */
 input {

@@ -671,7 +671,6 @@ nav li.responsive {
 
 /* multimedia page */
 
-/* quiz page */
 .fill {
     overflow: hidden;
     background-size: auto;
@@ -679,6 +678,11 @@ nav li.responsive {
     background-image: url(images/MultimediaBackground.png);
 }
 
+.fill span{
+    background-color: #E84855;
+}
+
+/* quiz page */
 input {
 
 }

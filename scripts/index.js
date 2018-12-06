@@ -25,4 +25,4 @@ setInterval(()=>{
         quoteIndex = 0;
     quote.innerHTML = '<strong>"'+ quotes[quoteIndex].quote +'"</strong>';
     quoter.innerHTML = '<p>' + quotes[quoteIndex].quoter + '</p>';
-}, 5000);
+}, 8000);

@@ -263,7 +263,7 @@ nav li.responsive {
 }
 
 #quote {
-    animation: slide-right 5s linear infinite;
+    animation: slide-right 8s linear infinite;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 1.2rem;
     font-style: italic;
@@ -273,10 +273,10 @@ nav li.responsive {
     0% {
         opacity: 0;
     }
-    5% {
+    8% {
         opacity: 1;
     }
-    80% {
+    70% {
         opacity: 1;
     }
     95% {
@@ -289,7 +289,7 @@ nav li.responsive {
 }
 
 #quoter {
-    animation: slide-left 5s linear infinite;
+    animation: slide-left 8s linear infinite;
     text-align: right;
 }
 
@@ -297,10 +297,10 @@ nav li.responsive {
     0% {
         opacity: 0;
     }
-    5% {
+    8% {
         opacity: 1;
     }
-    80% {
+    70% {
         opacity: 1;
     }
     95% {

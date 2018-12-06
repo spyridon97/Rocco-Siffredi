@@ -672,6 +672,7 @@ nav li.responsive {
 /* multimedia page */
 
 .fill {
+    text-align: center;
     overflow: hidden;
     background-size: auto;
     background-position: center;
@@ -680,12 +681,15 @@ nav li.responsive {
 
 .fill span{
     background-color: #E84855;
+    font-family: 'Sigmar One',cursive;
+    color: black;
 }
 
 .tableCenter {
     margin-left: auto;
     margin-right: auto;
 }
+
 
 /* quiz page */
 input {

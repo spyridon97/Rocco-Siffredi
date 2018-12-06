@@ -682,6 +682,11 @@ nav li.responsive {
     background-color: #E84855;
 }
 
+.tableCenter {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* quiz page */
 input {
 

@@ -509,11 +509,6 @@ nav li.responsive {
     font-size: 1.6em;
 }
 
-
-.imdb {
-    padding-left: 10px;
-}
-
 .imdb:link {
     color: deeppink;
     background-color: transparent;
@@ -679,9 +674,9 @@ nav li.responsive {
     background-image: url(images/MultimediaBackground.png);
 }
 
-.fill span{
+.fill span {
     background-color: #E84855;
-    font-family: 'Sigmar One',cursive;
+    font-family: 'Sigmar One', cursive;
     color: black;
 }
 
@@ -726,6 +721,72 @@ nav li.responsive {
 
 
 /* quiz page */
-input {
+.quiz {
+    background-color: white;
+}
 
+#TopBar {
+    font-family: 'Open Sans Condensed';
+    font-weight: bold;
+    height: 50px;
+    margin-bottom: 20px;
+    color: black;
+    font-size: 1.8em;
+    position: relative;
+    text-align: center;
+    align-self: center;
+    width: auto;
+}
+
+#navContent {
+    margin: auto;
+    width: 30%;
+    height: 400px;
+    position: center;
+    align-self: center;
+    overflow: hidden;
+}
+
+#game1 {
+    font-family: 'Open Sans Condensed';
+    width: 100%;
+    height: 100%;
+    position: center;
+}
+
+#game2 {
+    font-family: 'Open Sans Condensed';
+    width: 100%;
+    height: 100%;
+    position: center;
+}
+
+.questionText {
+    font-family: 'Open Sans Condensed';
+    align-self: center;
+    text-align: center;
+    font-size: 1.6em;
+    width: auto;
+    color: black;
+}
+
+.option {
+    font-family: 'Open Sans Condensed';
+    width: auto;
+    text-align: center;
+    align-self: center;
+    height: 10%;
+    margin: 15px;
+    font-size: 1.6em;
+    color: black;
+    padding: 10px 2px 2px 2px;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: slategrey;
+}
+
+.option:hover {
+    border: darkred solid 2px;
+    color: darkred;
 }

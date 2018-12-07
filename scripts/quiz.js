@@ -1,167 +1,153 @@
-(function () {
-    let questions = [{
-        question: "What is 2*5?",
-        choices: [2, 5, 10, 15, 20],
-        correctAnswer: 2
-    }, {
-        question: "What is 3*6?",
-        choices: [3, 6, 9, 12, 18],
-        correctAnswer: 4
-    }, {
-        question: "What is 8*9?",
-        choices: [72, 99, 108, 134, 156],
-        correctAnswer: 0
-    }, {
-        question: "What is 1*7?",
-        choices: [4, 5, 6, 7, 8],
-        correctAnswer: 3
-    }, {
-        question: "What is 8*8?",
-        choices: [20, 30, 40, 50, 64],
-        correctAnswer: 4
-    }];
-
-    let questionCounter = 0; //Tracks question number
-    let selections = []; //Array containing user choices
-    let quiz = $('#quiz'); //Quiz div object
-
-    // Display initial question
-    displayNext();
-
-    // Click handler for the 'next' button
-    $('#next').on('click', function (e) {
-        e.preventDefault();
-
-        // Suspend click listener during fade animation
-        if (quiz.is(':animated')) {
-            return false;
+document.addEventListener("DOMContentLoaded", function () {
+    let questionBank = [
+        {
+            "question": "What am i?",
+            "option1": "Producer",
+            "option2": "Actor",
+            "option3": "Director",
+            "option4": "All of the above",
+            "correct": "4"
+        },
+        {
+            "question": "How tall am i?",
+            "option1": "190cm",
+            "option2": "180cm",
+            "option3": "175cm",
+            "option4": "185cm",
+            "correct": "1"
+        },
+        {
+            "question": "Where was i born?",
+            "option1": "Milan",
+            "option2": "Rome",
+            "option3": "Otorna",
+            "option4": "Naples",
+            "correct": "3"
+        },
+        {
+            "question": "How many times did AVN Magazine award me?",
+            "option1": "15",
+            "option2": "18",
+            "option3": "20",
+            "option4": "13",
+            "correct": "2"
+        },
+        {
+            "question": "Rate my appearance from 1 to 10",
+            "option1": "1-4",
+            "option2": "4-6",
+            "option3": "6-8",
+            "option4": "8-10",
+            "correct": "4"
         }
-        choose();
+    ];
 
-        // If no user selection, progress is stopped
-        if (isNaN(selections[questionCounter])) {
-            alert('Please make a selection!');
+    let questionNumber = 0;
+    let stage = "#game1";
+    let stage2 = {};
+    let questionLock = false;
+    let numberOfQuestions = questionBank.length;
+    let score = 0;
+
+    scrambleDatabase();
+    displayQuestion();
+
+
+    /**
+     * @brief This function randomizes the data base in order to get the questions in a random order
+     */
+    function scrambleDatabase() {
+        let currentIndex = questionBank.length, temporaryValue, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            // And swap it with the current element.
+            temporaryValue = questionBank[currentIndex];
+            questionBank[currentIndex] = questionBank[randomIndex];
+            questionBank[randomIndex] = temporaryValue;
+        }
+    }
+
+
+    /**
+     * @brief This function is displaying the questions
+     */
+    function displayQuestion() {
+        let q1 = questionBank[questionNumber].option1;
+        let q2 = questionBank[questionNumber].option2;
+        let q3 = questionBank[questionNumber].option3;
+        let q4 = questionBank[questionNumber].option4;
+
+        $(stage).append('<div class="questionText">' + questionBank[questionNumber].question + '</div>' +
+            '<div id="1" class="option">' + q1 + '</div>' +
+            '<div id="2" class="option">' + q2 + '</div>' +
+            '<div id="3" class="option">' + q3 + '</div>' +
+            '<div id="4" class="option">' + q4 + '</div>');
+
+        $('.option').click(function () {
+            if (questionLock === false) {
+                questionLock = true;
+
+                //  checking if the answer is correct or not
+                if (this.id === questionBank[questionNumber].correct) {
+                    document.getElementById(this.id).style.backgroundColor = 'green';
+                    score++;
+                } else {
+                    document.getElementById(this.id).style.backgroundColor = 'red';
+                }
+
+                setTimeout(function () {
+                    changeQuestion()
+                }, 1000);
+            }
+        })
+    }
+
+
+    /**
+     * @brief This function is responsible for changing the questions
+     */
+    function changeQuestion() {
+        questionNumber++;
+
+        if (stage === "#game1") {
+            stage2 = "#game1";
+            stage = "#game2";
         } else {
-            questionCounter++;
-            displayNext();
+            stage2 = "#game2";
+            stage = "#game1";
         }
-    });
 
-    // Click handler for the 'prev' button
-    $('#prev').on('click', function (e) {
-        e.preventDefault();
-
-        if (quiz.is(':animated')) {
-            return false;
+        if (questionNumber < numberOfQuestions) {
+            displayQuestion();
+        } else {
+            displayFinalSlide();
         }
-        choose();
-        questionCounter--;
-        displayNext();
-    });
 
-    // Click handler for the 'Start Over' button
-    $('#start').on('click', function (e) {
-        e.preventDefault();
-
-        if (quiz.is(':animated')) {
-            return false;
-        }
-        questionCounter = 0;
-        selections = [];
-        displayNext();
-        $('#start').hide();
-    });
-
-    // Animates buttons on hover
-    $('.button').on('mouseenter', function () {
-        $(this).addClass('active');
-    });
-    $('.button').on('mouseleave', function () {
-        $(this).removeClass('active');
-    });
-
-    // Creates and returns the div that contains the questions and 
-    // the answer selections
-    function createQuestionElement(index) {
-        let qElement = $('<div>', {
-            id: 'question'
+        $(stage2).fadeOut("slow", function () {
+            $(stage2).empty();
         });
 
-        let header = $('<h2>Question ' + (index + 1) + ':</h2>');
-        qElement.append(header);
 
-        let question = $('<p>').append(questions[index].question);
-        qElement.append(question);
-
-        let radioButtons = createRadios(index);
-        qElement.append(radioButtons);
-
-        return qElement;
-    }
-
-    // Creates a list of the answer choices as radio inputs
-    function createRadios(index) {
-        let radioList = $('<ul>');
-        let item;
-        let input = '';
-        for (let i = 0; i < questions[index].choices.length; i++) {
-            item = $('<li>');
-            input = '<input type="radio" name="answer" value=' + i + ' />';
-            input += questions[index].choices[i];
-            item.append(input);
-            radioList.append(item);
-        }
-        return radioList;
-    }
-
-    // Reads the user selection and pushes the value to an array
-    function choose() {
-        selections[questionCounter] = +$('input[name="answer"]:checked').val();
-    }
-
-    // Displays next requested element
-    function displayNext() {
-        quiz.fadeOut(function () {
-            $('#question').remove();
-
-            if (questionCounter < questions.length) {
-                let nextQuestion = createQuestionElement(questionCounter);
-                quiz.append(nextQuestion).fadeIn();
-                if (!(isNaN(selections[questionCounter]))) {
-                    $('input[value=' + selections[questionCounter] + ']').prop('checked', true);
-                }
-
-                // Controls display of 'prev' button
-                if (questionCounter === 1) {
-                    $('#prev').show();
-                } else if (questionCounter === 0) {
-
-                    $('#prev').hide();
-                    $('#next').show();
-                }
-            } else {
-                let scoreElem = displayScore();
-                quiz.append(scoreElem).fadeIn();
-                $('#next').hide();
-                $('#prev').hide();
-                $('#start').show();
-            }
+        $(stage).fadeIn("slow", function () {
+            questionLock = false;
         });
     }
 
-    // Computes score and returns a paragraph element to be displayed
-    function displayScore() {
-        let score = $('<p>', {id: 'question'});
 
-        let numCorrect = 0;
-        for (let i = 0; i < selections.length; i++) {
-            if (selections[i] === questions[i].correctAnswer) {
-                numCorrect++;
-            }
-        }
+    /**
+     * @brieg This function is responsible for displaying the score sheet of the user
+     */
+    function displayFinalSlide() {
 
-        score.append('You got ' + numCorrect + ' questions out of ' +
-            questions.length + ' right!!!');
-        return score;
+        $(stage).append('' +
+            '<div class="questionText">You have finished the quiz!<br>' +
+            '<br>Total questions: ' + numberOfQuestions +
+            '<br>Correct answers: ' + score + '</div>');
     }
-})();
+});

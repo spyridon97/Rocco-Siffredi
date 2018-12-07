@@ -832,9 +832,11 @@ nav li.responsive {
 
 /*quotes page*/
 #quotepara {
-    width: 600px;
+    text-align: center;
+    font-family: 'Sigmar One', cursive;
 }
 
 #myAudio {
+    height: 0px;
     visibility: hidden;
 }

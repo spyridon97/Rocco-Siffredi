@@ -144,10 +144,17 @@ document.addEventListener("DOMContentLoaded", function () {
      * @brieg This function is responsible for displaying the score sheet of the user
      */
     function displayFinalSlide() {
+        let scoreSentence;
 
+        if (score < 2) {
+            scoreSentence = "You are a noob.";
+        } else if (score < 4) {
+            scoreSentence = "Mediocre dude."
+        } else {
+            scoreSentence = "I know you love me."
+        }
         $(stage).append('' +
-            '<div class="questionText">You have finished the quiz!<br>' +
-            '<br>Total questions: ' + numberOfQuestions +
-            '<br>Correct answers: ' + score + '</div>');
+            '<div class="questionText">You have finished the quiz!<br>' + scoreSentence + '<br>' +
+            '<br>Total questions: ' + numberOfQuestions + '<br>Correct answers: ' + score + '</div>');
     }
 });

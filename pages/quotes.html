@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title> Quotes | Rocco Siffredi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/icons/favicon.png">
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+</head>
+<body>
+<header>
+    <a href="../index.html" id="logo"><h1>Rocco Siffredi</h1></a>
+    <nav>
+        <ul>
+            <li class="menu-item">
+                <a href="./biography.html">
+                    <span class="menu-image" id="menu-image1"></span>
+                    <p>Biography</p>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="./awards.html">
+                    <span class="menu-image" id="menu-image2"></span>
+                    <p>Awards</p>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="./multimedia.html">
+                    <span class="menu-image" id="menu-image3"></span>
+                    <p>Multimedia</p>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="./quiz.html">
+                    <span class="menu-image" id="menu-image4"></span>
+                    <p>Quiz</p>
+                </a>
+            </li>
+            <li class="menu-item selected">
+                <a href="./quotes.html">
+                    <span class="menu-image" id="menu-image5"></span>
+                    <p>Quotes</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+      
+    
+<main>           
+<div id=quoteGenerator>
+    
+    
+    <table class=tableCenter><tr>
+        <th><input type="image" src="../images/quote.png" onclick="giveQuote()" alt="Rocco's thumbs up pose"/></th>
+        <th><p id=quotepara>Click him for some wisdom</p></th>
+    </tr></table>
+   
+    <audio id="myAudio" controls>
+        <source src="../audio/sfx.mp3" type="audio/mpeg">
+    </audio>
+   
+        
+</div>    
+</main>  
+    
+  
+    
+<footer>
+    <div class="footer-content">
+        <p>All rights reserved 2018©.</p>
+    </div>
+    <div class="footer-content">
+        <p>Navigation</p>
+        <a href="../index.html">Home</a>
+        <a href="./biography.html">Biography</a>
+        <a href="./awards.html">Awards</a>
+        <a href="./multimedia.html">Multimedia</a>
+        <a href="./quiz.html">Quiz</a>
+        <a href="./quotes.html">Quotes</a>
+    </div>
+    <div class="footer-content">
+        <p>Legal</p>
+        <a href="#">Credits</a>
+        <a href="#">Site ownership</a>
+        <a href="#">No user personalisation is performed</a>
+    </div>
+</footer>
+<script src="../scripts/jquery.js"></script>
+<script src="../scripts/quotes.js"></script>
+</body>
+</html>

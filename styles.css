@@ -7,7 +7,7 @@ html, body {
     margin: 0;
 }
 
-p {
+p, h2 {
     font-family: 'Open Sans Condensed';
 }
 
@@ -489,57 +489,52 @@ nav li.responsive {
 .awards {
     background-color: white;
     height: auto;
-    width: 100%;
     position: relative;
+    width: 100%;
 }
 
 .intro {
+    align-self: center;
     height: auto;
     padding: 20px;
     position: relative;
-    align-self: center;
 }
 
-.intro p {
+.intro h2 {
     color: black;
     z-index: 1;
 }
 
-.intro .text {
-    font-size: 1.6em;
-}
-
 .imdb:link {
-    color: deeppink;
     background-color: transparent;
+    color: deeppink;
     text-decoration: none;
 }
 
 .imdb:visited {
-    color: darkred;
     background-color: transparent;
+    color: darkred;
     text-decoration: none;
 }
 
 .imdb:hover {
-    color: blue;
     background-color: transparent;
+    color: blue;
     text-decoration: underline;
 }
-
 
 .line {
     width: 350px;
 }
 
 .avn-title {
-    font-size: 2em;
     align-self: center;
-    text-align: center;
     color: #E84855;
+    font-size: 2em;
     font-weight: bold;
-    z-index: 1;
     margin: 0;
+    text-align: center;
+    z-index: 1;
 }
 
 .avn {
@@ -565,13 +560,13 @@ nav li.responsive {
 }
 
 .avn .avn-awards {
+    align-self: center;
     font-size: 1.6em;
     grid-column-start: 1;
     height: 10vh;
-    width: auto;
     position: relative;
-    align-self: center;
     text-align: center;
+    width: auto;
 }
 
 .avn .avn-trophy {
@@ -582,31 +577,31 @@ nav li.responsive {
     display: block;
     grid-column-start: 2;
     height: 60vh;
-    width: auto;
     position: relative;
+    width: auto;
     z-index: 1;
 }
 
 .avn .avn-nominations {
+    align-self: center;
     font-size: 1.6em;
     grid-column-start: 3;
     height: 10vh;
-    width: auto;
     position: relative;
-    align-self: center;
     text-align: center;
+    width: auto;
 }
 
 .xcor-title {
-    font-size: 2em;
     align-self: center;
-    text-align: center;
     color: #E84855;
+    font-size: 2em;
     font-weight: bold;
-    z-index: 1;
     margin: 0;
-    padding-top: 20px;
     padding-bottom: 10px;
+    padding-top: 20px;
+    text-align: center;
+    z-index: 1;
 }
 
 .xcor {
@@ -632,13 +627,13 @@ nav li.responsive {
 }
 
 .xcor .xcor-awards {
+    align-self: center;
     font-size: 1.6em;
     grid-column-start: 1;
     height: 10vh;
-    width: auto;
     position: relative;
-    align-self: center;
     text-align: center;
+    width: auto;
 }
 
 .xcor-trophy {
@@ -649,19 +644,19 @@ nav li.responsive {
     display: block;
     grid-column-start: 2;
     height: 60vh;
-    width: auto;
     position: relative;
+    width: auto;
     z-index: 1;
 }
 
 .xcor .xcor-nominations {
+    align-self: center;
     font-size: 1.6em;
     grid-column-start: 3;
     height: 10vh;
-    width: auto;
     position: relative;
-    align-self: center;
     text-align: center;
+    width: auto;
 }
 
 /* multimedia page */
@@ -725,62 +720,62 @@ nav li.responsive {
     background-color: white;
 }
 
-#TopBar {
-    font-family: 'Open Sans Condensed';
+.TopBar {
+    align-self: center;
     font-weight: bold;
-    height: 50px;
-    margin-bottom: 20px;
-    color: black;
-    font-size: 1.8em;
     position: relative;
     text-align: center;
-    align-self: center;
     width: auto;
 }
 
+.TopBar h2 {
+    color: black;
+    z-index: 1;
+}
+
 #navContent {
-    margin: auto;
-    width: 30%;
-    height: 400px;
     align-self: center;
+    height: 400px;
+    margin: auto;
     overflow: hidden;
+    width: 30%;
 }
 
 #game1 {
     font-family: 'Open Sans Condensed';
-    width: 100%;
     height: 100%;
+    width: 100%;
 }
 
 #game2 {
     font-family: 'Open Sans Condensed';
-    width: 100%;
     height: 100%;
+    width: 100%;
 }
 
 .questionText {
-    font-family: 'Open Sans Condensed';
     align-self: center;
-    text-align: center;
-    font-size: 1.6em;
-    width: auto;
     color: black;
+    font-family: 'Open Sans Condensed';
+    font-size: 1.6em;
+    text-align: center;
+    width: auto;
 }
 
 .option {
-    font-family: 'Open Sans Condensed';
-    width: auto;
-    text-align: center;
     align-self: center;
-    height: 10%;
-    margin: 15px;
-    font-size: 1.6em;
-    color: black;
-    padding: 10px 2px 2px 2px;
+    background-color: slategrey;
     border: 2px solid black;
     border-radius: 10px;
+    color: black;
     cursor: pointer;
-    background-color: slategrey;
+    font-family: 'Open Sans Condensed';
+    font-size: 1.6em;
+    height: 10%;
+    margin: 15px;
+    padding: 10px 2px 2px 2px;
+    text-align: center;
+    width: auto;
 }
 
 .option:hover {

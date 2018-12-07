@@ -222,6 +222,10 @@ nav li.responsive {
     background-image: url("./images/itm-girl3.png");
 }
 
+#menu-image5 {
+    background-image: url("./images/itm-rocco2.png");
+}
+
 /* Landing page (index.html) */
 #landing-main {
     height: 100%;
@@ -781,4 +785,13 @@ nav li.responsive {
 .option:hover {
     border: darkred solid 2px;
     color: darkred;
+}
+
+/*quotes page*/
+#quotepara {
+    width: 600px;
+}
+
+#myAudio {
+    visibility: hidden;
 }

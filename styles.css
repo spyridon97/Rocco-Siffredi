@@ -323,7 +323,7 @@ nav li.responsive {
     position: relative;
 }
 
-.overview {
+#overview {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px 10px;
@@ -332,12 +332,12 @@ nav li.responsive {
     position: relative;
 }
 
-.overview p {
+#overview p {
     color: black;
     z-index: 1;
 }
 
-.overview .emphasize {
+#overview .emphasize {
     font-size: 1.6em;
     grid-column-start: 1;
 }
@@ -416,7 +416,7 @@ nav li.responsive {
     }
 }
 
-.stats {
+#stats {
     align-items: center;
     background: repeating-linear-gradient(
             90deg,
@@ -492,6 +492,41 @@ nav li.responsive {
     margin-right: 50px;
 }
 
+/* Small screens */
+@media screen and (max-width: 900px) {
+    #stats {
+        flex-direction: column; 
+        justify-content: center;
+    }
+
+    #stats_box {
+        height: 100%;
+        width: 100%;
+    }
+
+    #siffredi-costume {
+        display: none;
+    }
+
+    .stats-item {
+        font-size: 1rem;
+    }
+
+    .stats-item > p:nth-child(2) {
+        font-size: 1.2rem;
+    }
+}
+
+/* Even smallers screens */
+@media screen and (max-width: 500px) {
+    .stats-item {
+        font-size: 0.5rem;
+    }
+
+    .stats-item > p:nth-child(2) {
+        font-size: 0.8rem;
+    }
+}
 
 /* awards page */
 .awards {

@@ -15,7 +15,11 @@ header {
     align-items: center;
     display: flex;
     flex-direction: row;
-    height: 100px;
+    height: auto;
+}
+
+header > h1 {
+    white-space: nowrap;
 }
 
 #logo {
@@ -78,10 +82,10 @@ nav {
     background-size: contain;
     cursor: pointer;
     display: none;
-    height: 10%;
-    width: 10%;
-    position: absolute;
-    right: 20px;
+    min-height: 40px;
+    min-width: 40px;
+    margin-right: 10px;
+    margin-left: auto;
 }
 
 
@@ -94,13 +98,6 @@ nav li {
     cursor: pointer;
     display: inline-block;
     padding: 20px;
-}
-
-@media screen and (min-width: 800px) {
-    nav li:hover {
-        transform: scale(1.2);
-        transition: .5s;
-    }
 }
 
 nav a, nav p {
@@ -133,6 +130,7 @@ nav .selected {
     z-index: 0;
 }
 
+/* Enable animations for large screens only*/
 @media screen and (min-width: 800px) {
     .menu-item:hover {
         animation: pole 10s linear infinite;
@@ -149,6 +147,10 @@ nav .selected {
         border-radius: 10px;
         box-sizing: border-box;
     }
+    nav li:hover {
+        transform: scale(1.2);
+        transition: .5s;
+    }
 }
 
 @keyframes pole {
@@ -157,6 +159,7 @@ nav .selected {
     }
 }
 
+/* Small screens */
 @media screen and (max-width: 800px) {
     nav {
         background-color: transparent;
@@ -174,6 +177,7 @@ nav .selected {
     }
 }
 
+/* Even smaller screens */
 @media screen and (max-width: 470px) {
     header {
         flex-direction: column;
@@ -183,7 +187,7 @@ nav .selected {
 /* The responsive classes are meant to be added using js*/
 
 header.responsive {
-    background-color: #942E37;
+    background-color: black;
     flex-direction: column;
     height: auto;
     justify-content: space-between;
@@ -197,7 +201,6 @@ nav li.responsive {
     background-size: contain;
     background-repeat: no-repeat;
     bottom: 0;
-    opacity: 0;
     left: 0;
     opacity: 0.9;
     position: absolute;
@@ -228,17 +231,18 @@ nav li.responsive {
 
 /* Landing page (index.html) */
 #landing-main {
-    height: 100%;
+    position: relative;
+    height: calc(100vh - 100px);
     width: 100%;
 }
 
 #landing-image {
     animation: smooth-in 7s linear;
     bottom: 0;
-    height: 80%;
-    width: auto;
+    height: 100%; width: auto;
     position: absolute;
     right: 10%;
+    /* top: 0; */
 }
 
 @keyframes smooth-in {

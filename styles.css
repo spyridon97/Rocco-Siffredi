@@ -323,6 +323,10 @@ nav li.responsive {
     position: relative;
 }
 
+.accessible {
+    display: none;
+}
+
 #overview {
     display: grid;
     grid-template-columns: 1fr 1fr;
